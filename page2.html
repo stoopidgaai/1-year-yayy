@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <title> For my love</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body style="background-color: hsl(351, 67%, 86%);" class="page-shell">
+        <div class="page-title">
+            <p class="text2">Four seasons of us</p>
+        </div>
+
+        <main class="season-videos" id="seasonVideos">
+            <section class="season-card is-active" data-index="0">
+                <p>summer</p>
+                <video class="season-video" controls playsinline preload="metadata">
+                    <source src="Summer.mp4" type="video/mp4">
+                </video>
+            </section>
+
+            <section class="season-card" data-index="1">
+                <p>autumn</p>
+                <video class="season-video" controls playsinline preload="metadata">
+                    <source src="Autumn.mp4" type="video/mp4">
+                </video>
+            </section>
+
+            <section class="season-card" data-index="2">
+                <p>winter</p>
+                <video class="season-video" controls playsinline preload="metadata">
+                    <source src="Winter.mp4" type="video/mp4">
+                </video>
+            </section>
+
+            <section class="season-card" data-index="3">
+                <p>spring</p>
+                <video class="season-video" controls playsinline preload="metadata">
+                    <source src="Spring.mp4" type="video/mp4">
+                </video>
+            </section>
+        </main>
+
+        <audio id="bgMusic" class="music-player" autoplay loop>
+            <source src="New West - Those Eyes (Lyrics)(MP3_160K).mp3" type="audio/mpeg">
+        </audio>
+        <p id="musicHint" class="music-hint" aria-live="polite">Press M to mute music</p>
+
+        <div class="page-bottom page-footer">
+            <a class="back-button letter-link" href="gratitude.html">A letter for my baby</a>
+            <div class="center-link">
+                <a class="back-button" href="index.html">Back</a>
+            </div>
+        </div>
+
+        <script>
+            const seasonCards = Array.from(document.querySelectorAll('.season-card'));
+            const seasonVideos = Array.from(document.querySelectorAll('.season-video'));
+            const bgMusic = document.getElementById('bgMusic');
+            const musicHint = document.getElementById('musicHint');
+            const gratitudeLink = document.querySelector('a[href="gratitude.html"]');
+            const musicStateKey = 'thoseEyesMusicTime';
+
+            function setActiveCard(index) {
+                seasonCards.forEach((card, i) => {
+                    card.classList.toggle('is-active', i === index);
+                });
+            }
+
+            function stopOtherVideos(activeIndex) {
+                seasonVideos.forEach((video, i) => {
+                    if (i !== activeIndex) {
+                        video.pause();
+                    }
+                });
+            }
+
+            seasonVideos.forEach((video, index) => {
+                video.addEventListener('play', () => {
+                    setActiveCard(index);
+                    stopOtherVideos(index);
+                    if (bgMusic.paused) {
+                        bgMusic.play().catch(() => {});
+                    }
+                });
+
+                video.addEventListener('ended', () => {
+                    const nextVideo = seasonVideos[index + 1];
+                    if (nextVideo) {
+                        setActiveCard(index + 1);
+                        nextVideo.currentTime = 0;
+                        nextVideo.play().catch(() => {});
+                    }
+                });
+            });
+
+            if (bgMusic) {
+                bgMusic.volume = 0.25;
+
+                function persistMusicTime() {
+                    localStorage.setItem(musicStateKey, String(bgMusic.currentTime));
+                }
+
+                bgMusic.addEventListener('timeupdate', () => {
+                    persistMusicTime();
+                });
+
+                window.addEventListener('pagehide', persistMusicTime);
+                document.addEventListener('visibilitychange', () => {
+                    if (document.visibilityState === 'hidden') {
+                        persistMusicTime();
+                    }
+                });
+
+                if (gratitudeLink) {
+                    gratitudeLink.addEventListener('click', persistMusicTime);
+                }
+
+                bgMusic.play().catch(() => {});
+
+                document.addEventListener('keydown', (event) => {
+                    if (event.key.toLowerCase() !== 'm') {
+                        return;
+                    }
+
+                    bgMusic.muted = !bgMusic.muted;
+                    if (musicHint) {
+                        musicHint.textContent = bgMusic.muted ? 'Music muted (press M to unmute)' : 'Music unmuted (press M to mute)';
+                    }
+                });
+            }
+
+            if (seasonVideos[0]) {
+                seasonVideos[0].play().catch(() => {});
+            }
+        </script>
+    </body>
+</html>

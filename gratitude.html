@@ -1,0 +1,68 @@
+<html> 
+    <head>
+        <title> Love letter? </title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body style="background-color: hsl(351, 67%, 86%);" class="page-shell gratitude-page">
+        <audio id="bgMusic" class="music-player" autoplay loop>
+            <source src="New West - Those Eyes (Lyrics)(MP3_160K).mp3" type="audio/mpeg">
+        </audio>
+        <p id="musicHint" class="music-hint" aria-live="polite">Press M to mute music</p>
+
+        <div class="letter gratitude-letter">
+            <p style="text-align: center;" >1 year, yayyy</p>
+To,<br>
+Swapnima Paudel(My baby) <br><br>
+
+Happy happy happy one year anniversary my baby. I'm so grateful for having you in my life. I knew I wanted to know you, and I HAVE to know you the day you said "byebye" to Chandan, Rojit, and Ancheet, but not me(Jelly huhuhu). It IS dumb to be sad for not getting a goodbye from a stranger, but at the end of the day, we all do expect life to be little easier, right? We all expect that they would reach out themselves, especially when we know that we CAN'T fumble. I knew I wanted to hear you talk more and more when I found out that you were also a reserved person, just like me, the day when we were practicing for the club farewell. I realized I want to always stay with you when you gave me the hug before going home, and a part of me wanted to hold you for just a bit longer, so that I could feel your heartbeat even if it's for a little longer. I knew I loved you when I realized that the hardest time for me is while i'm returning home after spending a whole day with you. I knew I loved you when I felt comfortable to be my true self with you.
+<br><br>
+I always regret not being able to see you on the first day of the tour. Little did I know, I would get a "Hii" from the woman about whom I'd be talking all day with my friends, and try to have a glance at her through the reflection from my phone's screen. That first text, basantaa, eshaara, falling in love, getting to know each other, getting to know the little Swapnima, and the little Achyut, finding out we are sosoo similar, but also sooo different, talking past midnights discussing philosophies, our own perpectives, and sometimes saying "phak eu" to each other huhuhu. Always trying to make you feel special, but also not doing too much so that you don't feel overwhelmed. Cracking lame jokes, staying up on calls, the days of fighting and most importantly LEARINING. Swayambhu, That awkward phase, "pani chaiyo" bhanda maile haat diyeko, holding your hands for the first time, getting my first kissi hehe, Garden of Dreams, Wandering cluelessly around patan for finding Binu's Laphing, Boudha(and the taragaon museum huhuhu), Ranjana Soda, always wishing to take the longer route in order to spend more time with you, "J bhaye ni padhaai chai bigrinu bhayena", basantapur ka ti galliharu, zoo and "hya kati dherai manxee", science fest, demonstration ko preparations, and lunch garda dhilo garnu, valentinesss dayyy "Will you be my valentines?", "I promise to always be with you and support you", "so you can keep me inside the necklace you got when you were seventeen*", all of those letters, iloveeyouuuus and mwaaahhhs, and all of those hugs.
+<br><br>
+ I used to be scared of affection, and expression. And I've changed a lot since we met. I have become a bit less scared of expressing myself, a bit more cautious and a bit more Bakchod. Thank you for accepting me. All this time, we laughed, we wandered around, we even fought, learned and COMMUNICATED. We've seen different versions of each other in all these months, and there are more to come. J jasto bhayeni, we always had each other's back. And whenever I needed you, you were always there for me. You were always ready to communicate, and willing to understand me. Thank you! Thank you for making me feel loved, and special. Thank you for giving me, and us a chance. Thank you for letting me be me, and thank you for being you. Thank you for being my ujeli! I love you, I love the way you say "laaaahh" when you realize you've messed something up. I love the way you say that you love me. I love the way you see things, and I love the way you call me badmas. And just so you know, even if you we were insects, or birds(lovie DOVIESS hehe), or rocks, i'd still love you the most. I love you more than any language in the world can ever express. Happy anniversary sanu:). Yeta aau:((<br>
+<br>
+        </div>
+        <div class="center-link page-bottom">
+            <a class="back-button" href="page2.html">Back</a>
+        </div>
+
+        <script>
+            const bgMusic = document.getElementById('bgMusic');
+            const musicHint = document.getElementById('musicHint');
+            const musicStateKey = 'thoseEyesMusicTime';
+
+            if (bgMusic) {
+                const savedTime = Number(localStorage.getItem(musicStateKey) || '0');
+                bgMusic.volume = 0.25;
+
+                const canRestore = !Number.isNaN(savedTime) && savedTime > 0;
+                const restoreTime = () => {
+                    if (canRestore) {
+                        bgMusic.currentTime = savedTime;
+                    }
+                    bgMusic.play().catch(() => {});
+                };
+
+                if (bgMusic.readyState >= 1) {
+                    restoreTime();
+                } else {
+                    bgMusic.addEventListener('loadedmetadata', restoreTime, { once: true });
+                }
+
+                bgMusic.addEventListener('timeupdate', () => {
+                    localStorage.setItem(musicStateKey, String(bgMusic.currentTime));
+                });
+
+                document.addEventListener('keydown', (event) => {
+                    if (event.key.toLowerCase() !== 'm') {
+                        return;
+                    }
+
+                    bgMusic.muted = !bgMusic.muted;
+                    if (musicHint) {
+                        musicHint.textContent = bgMusic.muted ? 'Music muted (press M to unmute)' : 'Music unmuted (press M to mute)';
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

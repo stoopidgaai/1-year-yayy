@@ -1,0 +1,466 @@
+@font-face{
+    src: url('RetroVintage-Regular.otf');
+    font-family: Retro;
+}
+
+@font-face {
+    src: url('Amperzand.ttf');
+    font-family: Halaney;
+}
+
+@font-face {
+    src: url('Vigofam.ttf');
+    font-family: vigofam;
+}
+
+.big{
+    font-size: xx-large;
+    font-family: 'Retro', sans-serif;
+    color: rgb(168, 63, 63);
+    text-shadow: 2px 2px 5px pink;
+    margin-bottom: 0px;
+    padding: 0px 0px;
+}
+.ind{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 8px;
+}
+
+p{
+    padding:2px;
+    margin:0px;
+}
+
+a{
+    font-size: larger;
+    font-family: 'vigofam', 'sans-serif';
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 8px;
+    color:rgb(0, 0, 0);
+    background-color: hsl(0, 0%, 95%);
+    border-radius: 8px;
+}
+
+a:hover{
+    background-color: hsla(0, 0%, 95%, 0.577);
+}
+
+.text{
+    color: rgb(0, 0, 0);
+    text-align:center;
+    font-size: x-large;
+    font-family: 'Halaney';
+    margin: 5px 0px;
+}
+
+.page-shell{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.background-music{
+    display: block;
+    width: min(90vw, 720px);
+    height: auto;
+    max-width: none;
+    max-height: 78vh;
+    margin: 18px auto 0;
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    pointer-events: auto;
+}
+
+.center-link{
+    display: flex;
+    justify-content: center;
+    padding: 20px 5x;
+}
+
+.page-bottom{
+    margin-top: auto;
+    padding-top: 18px;
+}
+
+.page-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 10px;
+}
+
+.page-nav{
+    display: flex;
+    justify-content: center;
+    margin: 18px 0 8px;
+}
+
+.back-button{
+    padding: 8px 16px;
+    border-radius: 999px;
+}
+
+.p2{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+    grid-template-rows: auto 1fr;
+    gap: 1.25rem;
+    width: min(100%, 980px);
+    margin: 0 auto;
+    padding: 12px 16px 0;
+}
+
+.p2 img{
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 3px 3px 5px white;
+}
+
+.p2 img:hover{
+    transform: scale(1.03);
+    transition: 0.3s;
+}
+
+.text2{
+    width: 100%;
+    justify-self: center;
+    align-self: end;
+    color: rgb(0, 0, 0);
+    text-align:center;
+    font-size: x-large;
+    font-family: 'Halaney';
+    margin: 5px 0px 2px;
+}
+
+.page-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.text-subtitle{
+    color: rgb(67, 48, 58);
+    font-size: 1rem;
+    font-family: 'vigofam', 'sans-serif';
+}
+
+.page-videos{
+    width: min(100%, 560px);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 18px 16px 0;
+    margin: 0 auto;
+}
+
+.video-card{
+    background: rgba(255, 255, 255, 0.62);
+    border-radius: 18px;
+    padding: 14px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.video-card p{
+    margin-bottom: 10px;
+    font-family: 'Halaney';
+    font-size: x-large;
+}
+
+.video-card video{
+    display: block;
+    width: 100%;
+    border-radius: 14px;
+}
+
+.video-placeholder{
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 14px;
+    border: 2px dashed rgba(120, 84, 98, 0.45);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 239, 245, 0.72));
+    color: rgba(100, 67, 83, 0.88);
+    font-family: 'vigofam', 'sans-serif';
+    font-size: 1.1rem;
+}
+
+.letter-link{
+    margin-right: 10px;
+}
+
+.music{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 12px 16px 40px;
+}
+
+.music video{
+    width: 80%;
+    margin-bottom: 0px;
+}
+
+.season-videos{
+    width: min(100%, 1360px);
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 6px;
+}
+
+.season-card{
+    background: rgba(255, 255, 255, 0.56);
+    border-radius: 18px;
+    padding: 12px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.season-card p{
+    margin-bottom: 8px;
+    font-family: 'Halaney';
+    font-size: 1.15rem;
+}
+
+.season-card video{
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    aspect-ratio: 9 / 14;
+    object-fit: contain;
+    max-height: 320px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.season-card.is-active{
+    outline: 3px solid rgba(206, 87, 130, 0.55);
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.46), 3px 3px 10px rgba(0, 0, 0, 0.16);
+}
+
+.music-player{
+    margin-top: 10px;
+    width: min(92vw, 320px);
+    align-self: center;
+}
+
+.music-hint{
+    margin: 4px 0 0;
+    text-align: center;
+    font-family: 'vigofam', 'sans-serif';
+    font-size: 0.95rem;
+    color: rgba(60, 38, 48, 0.85);
+}
+
+.letter-page{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 16px 32px;
+}
+
+.photo-slider{
+    width: min(100%, 1180px);
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 24px 12vw 22px;
+    margin-bottom: 8px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.photo-slider::-webkit-scrollbar{
+    display: none;
+}
+
+.photo-slide{
+    flex: 0 0 min(76vw, 820px);
+    position: relative;
+    scroll-snap-align: center;
+}
+
+.photo-slider img{
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
+    scroll-snap-align: center;
+    display: block;
+}
+
+.letter{
+    width: 100%;
+    text-align: left;
+    font-size: 20px;
+    font-family: 'vigofam', 'Sans-serif';
+    margin: 20px 0;
+    padding: 20px;
+    border: 2px solid pink;
+    border-radius: 15px;
+    background-color: hsl(0, 100%, 95%);
+    box-shadow: 5px 10px 18px #888888;
+}
+
+.gratitude-page{
+    min-height: 100vh;
+    padding: 12px 16px 40px;
+    box-sizing: border-box;
+    background-image: linear-gradient(rgba(255, 234, 242, 0.40), rgba(255, 234, 242, 0.40)), url('flowers.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.gratitude-page .letter{
+    background-color: rgba(255, 248, 250, 0.65);
+}
+
+.gratitude{
+    display: grid;
+    height: 80vh;
+    grid-template-rows: repeat(12,1fr);
+    grid-template-columns: 4fr 3fr 20px 20px 20px 4fr 20px 20px 20px 3fr 4fr;
+    margin-bottom: 20px;
+    background: rgba(255, 248, 250, 0.42);
+    backdrop-filter: blur(2px);
+    border-radius: 24px;
+    padding: 12px;
+}
+
+.text3{
+    grid-area: 1/2/2/11;
+    justify-self: center;
+    align-self: flex-end;
+    place-items: center;
+    color: rgb(0, 0, 0);
+    text-align:center;
+    font-size: x-large;
+    font-family: 'Halaney';
+    margin-top: 10px;
+    margin-bottom: 20px 
+}
+
+.a11{
+    grid-area: 2/4/13/9;
+    justify-self: stretch;
+    align-items: stretch;
+    border-radius: 8px;
+    padding: 0px;
+}
+
+.a11 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+}
+
+.a1{
+    grid-area: 3/1/4/5;
+    justify-self: right;
+    align-self: center;
+    border-radius: 20px;
+    padding: 10px 20px;
+    z-index: 1;
+}
+
+.a2{
+    grid-area: 5/1/6/3;
+    justify-self: right;
+    align-self: center;
+    border-radius: 20px;
+    padding: 10px 20px;
+    z-index: 1;
+}
+
+.a3{
+    grid-area: 7/1/8/5;
+    justify-self: right;
+    align-self: center;
+    border-radius: 20px;
+    padding: 10px 20px;
+    z-index: 1;
+}
+
+.a4{
+    grid-area: 9/1/10/3;
+    justify-self: right;
+    align-self: center;
+    border-radius: 20px;
+    padding: 10px 20px;
+    z-index: 1;
+}
+
+.a5{
+    grid-area: 11/1/12/5;
+    justify-self: right;
+    align-self: center;
+    border-radius: 20px;
+    padding: 10px 20px;
+    z-index: 1;
+}
+
+.a6{
+    grid-area: 3/8/4/-1;
+    justify-self: left;
+    align-self: center;
+    border-radius: 20px;
+    padding: 10px 20px;
+    z-index: 1;
+}
+
+.a7{
+    grid-area: 5/10/6/-1;
+    justify-self: left;
+    align-self: center;
+    border-radius: 20px;
+    padding: 10px 20px;
+    z-index: 1;
+}
+
+.a8{
+    grid-area: 7/8/8/-1;
+    justify-self: left;
+    align-self: center;
+    border-radius: 20px;
+    padding: 10px 20px;
+    z-index: 1;
+}
+
+.a9{
+    grid-area: 9/10/10/-1;
+    justify-self: left;
+    align-self: center;
+    border-radius: 20px;
+    padding: 10px 20px;
+    z-index: 1;
+}
+
+.a10{
+    grid-area: 11/8/12/-1;
+    justify-self: left;
+    align-self: center;
+    border-radius: 20px;
+    padding: 10px 20px;
+    z-index: 1;
+}
